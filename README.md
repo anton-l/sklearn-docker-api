@@ -39,14 +39,14 @@
 │   └── train.py
 ├── models  # a place for your trained model dumps
 │   └── svm.joblib
+├── service  # api service directory
+│   ├── api.py  # the main script for our model server
+|   └── utils.py  # utility functions, e.g. a logging helper
 ├── .dockerignore  # list of files that aren't needed inside the docker container
-├── api.py  # the main script for our model server
 ├── conda-env.yml  # conda environment configuration
-├── dev.compose.yml  # docker-compose configuration for a DEVELOPMENT deployment
 ├── Dockerfile  # docker image configuration
-├── prod.compose.yml  # docker-compose configuration for a PRODUCTION deployment
-└── utils.py  # utility functions, e.g. logging helper
-
+├── dev.compose.yml  # docker-compose configuration for a DEVELOPMENT deployment
+└── prod.compose.yml  # docker-compose configuration for a PRODUCTION deployment
 ```
 
 ### Where to look first

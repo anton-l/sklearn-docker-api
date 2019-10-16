@@ -1,5 +1,4 @@
 import logging
-import os
 
 
 LOG_LEVELS = {
@@ -17,7 +16,7 @@ def get_logger(name: str, log_level: str):
         logger = get_module_logger(__name__)
     """
     if isinstance(log_level, str):
-        log_level = LOG_LEVELS[log_level]
+        log_level = LOG_LEVELS[log_level.lower()]
     logger = logging.getLogger(name)
     handler = logging.StreamHandler()
     formatter = logging.Formatter(

@@ -3,7 +3,7 @@ import os
 from typing import Dict
 from fastapi import FastAPI
 from pydantic import BaseModel
-from utils import get_logger
+from service.utils import get_logger
 
 LOG_LEVEL = os.getenv('LOG_LEVEL', 'debug')
 MODEL_PATH = os.getenv('MODEL_PATH', 'models/svm.joblib')

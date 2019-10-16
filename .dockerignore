@@ -1,14 +1,6 @@
-# don't track git and idea files
-.git
+# don't copy git, idea and python cache files inside the container
+**/.git
 **/.gitignore
 **/.gitkeep
-.idea
-__pycache__/
-
-# config files should not be inside the container
-*.compose.yml
-Dockerfile
-
-# local directories that would only bloat the final image
-data
-experiments
+**/.idea
+**/__pycache__
