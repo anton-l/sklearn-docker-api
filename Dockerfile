@@ -1,9 +1,12 @@
 FROM continuumio/miniconda3:4.7.10
 
+# run the CMD below using bash
 ENTRYPOINT [ "/bin/bash", "-c" ]
 
+# other containers on the same docker network will be able to access this port
 EXPOSE 5000
 
+# default environment variables
 ENV APP_MODULE=api:app
 ENV HOST=0.0.0.0
 ENV PORT=5000
@@ -27,6 +30,7 @@ RUN conda env update -n base -f /app/conda-env.yml && conda clean --all
 
 # copy the sources
 COPY . /app
+# "cd" to the app directory
 WORKDIR /app
 
 # run uvicorn server with path to the main app

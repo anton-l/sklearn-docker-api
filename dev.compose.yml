@@ -3,18 +3,18 @@ version: '3.3'
 services:
 
   model-api:
-    build: .
-    image: iris-model-api:dev
+    build: .  # use the Dockerfile from this directory (also this whole dir will be the build context)
+    image: iris-model-api:dev  # image-name:version-tag
     ports:
-      - '127.0.0.1:9090:5000'
-    environment:
-      - APP_MODULE=api:app
-      - PORT=5000
-      - WORKERS=2
-      - LOG_LEVEL=debug
-      - MODEL_PATH=models/svm.joblib
+      - '127.0.0.1:9090:5000'  # be VERY careful no to open the port to the internet (127.0.0.1 makes sure that it is only a local port)
+    environment:  # environment variables (we use them in a Dockerfile and inside api.py)
+      - APP_MODULE=api:app  # path to the 'app' object inside api.py
+      - PORT=5000  # api server port inside the container, use it to expose the port above
+      - WORKERS=2  # 2 workers is enough to test for multiprocessing compatibility
+      - LOG_LEVEL=debug  # see all the logs available
+      - MODEL_PATH=models/svm.joblib  # path to the model binary
     deploy:
-      resources:
+      resources:  # hard system limits for the container
         limits:
           cpus: '2'
-          memory: 4G
+          memory: 4G  # is the app tries to use more, the container will crash and restart

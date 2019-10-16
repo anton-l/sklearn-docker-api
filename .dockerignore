@@ -3,6 +3,7 @@
 **/.gitignore
 **/.gitkeep
 .idea
+__pycache__/
 
 # config files should not be inside the container
 *.compose.yml
