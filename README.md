@@ -1,5 +1,16 @@
 # sklearn-docker-api
-A minimalistic example of preparing a model for (synchronous) inference in production.
+```
+ _______________________________________
+/ A minimalistic example of preparing a \
+| model for (synchronous) inference in  |
+\ production.                           /
+ ---------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+```
 
 ## Getting started
 
