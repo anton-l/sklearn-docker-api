@@ -1,0 +1,13 @@
+name: ml-conda-env
+channels:
+- defaults
+- conda-forge
+dependencies:
+- python=3.6.6
+- pip
+- scikit-learn=0.21.3
+- pydantic=0.32.2
+- pip:
+  - fastapi==0.42.0
+  - uvicorn==0.9.0
+  - joblib==0.14.0

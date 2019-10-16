@@ -1,2 +1,2 @@
 # sklearn-docker-api
-A minimalistic example of wrapping a model for (synchronous) inference in production.
+A minimalistic example of preparing a model for (synchronous) inference in production.
