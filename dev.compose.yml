@@ -17,4 +17,4 @@ services:
       resources:  # hard system limits for the container
         limits:
           cpus: '2'
-          memory: 4G  # is the app tries to use more, the container will crash and restart
+          memory: 4G  # if the app tries to use more, the container will crash and restart
