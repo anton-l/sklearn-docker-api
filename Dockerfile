@@ -26,6 +26,10 @@ RUN pip uninstall -y setuptools && conda install setuptools nomkl \
 COPY ./conda-env.yml /app/conda-env.yml
 RUN conda env update -n base -f /app/conda-env.yml && conda clean --all
 
+# create and use a non-root user for security reasons
+RUN useradd -ms /bin/bash dummy
+USER dummy
+
 # copy the sources and models inside the container
 COPY ./service   /app/service
 COPY ./models    /app/models
